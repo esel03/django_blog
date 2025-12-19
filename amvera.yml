@@ -8,6 +8,6 @@ build:
   useCache: true
 run:
   scriptName: start.sh
-  command: null
+  command: bash
   persistenceMount: /data
   containerPort: "80"
