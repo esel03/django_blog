@@ -1,3 +1,3 @@
 #!/bin/sh
-cd mysite
-python manage.py runserver 0.0.0.0:8000
+#cd mysite
+python mysite/manage.py runserver 0.0.0.0:8000
