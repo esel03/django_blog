@@ -80,7 +80,7 @@ DATABASES = {
         "USER": "voron",
         "PASSWORD": "voron",
         "HOST": "ru.tuna.am",
-        "PORT": 26116,
+        "PORT": 27618,
     }
 }
 
