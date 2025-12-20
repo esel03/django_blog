@@ -1,92 +1,206 @@
-body { 
-    margin:0;
-    padding:0;
-    font-family:helvetica, sans-serif; 
+/* Обнуление и базовые стили */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafafa;
 }
 
-a { 
-    color:#00abff;
-    text-decoration:none; 
+a {
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-h1 { 
-    font-weight:normal;
-    border-bottom:1px solid #bbb;
-    padding:0 0 10px 0;
+a:hover {
+    color: #005fa3;
+    text-decoration: underline;
+}
+
+/* Заголовки */
+h1 {
+    font-weight: 600;
+    font-size: 2.2em;
+    color: #1a1a1a;
+    border-bottom: 2px solid #0077cc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
 h2 {
-    font-weight:normal;
-    margin:30px 0 0;
+    font-weight: 500;
+    font-size: 1.5em;
+    color: #222;
+    margin: 30px 0 10px;
+    position: relative;
 }
 
-#content { 
-    float:left;
-    width:60%;
-    padding:0 0 0 30px; 
+h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #ddd;
+    margin-top: 8px;
 }
 
-#sidebar { 
-    float:right;
-    width:30%;
-    padding:10px;
-    background:#efefef; 
-    height:100%;
+/* Основной контент и сайдбар */
+#content {
+    float: left;
+    width: 60%;
+    padding: 0 0 0 30px;
 }
 
-p.date { 
-    color:#ccc;
-    font-family: georgia, serif;
-    font-size: 12px;
-    font-style: italic; 
+#sidebar {
+    float: right;
+    width: 30%;
+    padding: 20px;
+    background: #f0f8ff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e8f0;
 }
 
-/* pagination */
-.pagination { 
-    margin:40px 0; 
-    font-weight:bold;
+/* Дата */
+p.date {
+    color: #777;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 14px;
+    font-style: italic;
+    margin: 8px 0 16px;
 }
 
-/* forms */
-label { 
-    float:left;
-    clear:both;
-    color:#333;
-    margin-bottom:4px; 
-}
-input, textarea { 
-    clear:both;
-    float:left;
-    margin:0 0 10px;
-    background:#ededed;
-    border:0;
-    padding:6px 10px;
-    font-size:12px;
-}
-input[type=submit] {
-    font-weight:bold;
-    background:#00abff;
-    color:#fff;
-    padding:10px 20px;
-    font-size:14px;
-    text-transform:uppercase; 
-}
-.errorlist { 
-    color:#cc0033;
-    float:left;
-    clear:both;
-    padding-left:10px; 
+/* Пагинация */
+.pagination {
+    margin: 40px 0;
+    text-align: center;
+    font-weight: 500;
+    color: #555;
 }
 
-/* comments */
+.pagination a {
+    color: #0077cc;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin: 0 4px;
+    transition: all 0.2s ease;
+}
+
+.pagination a:hover {
+    background-color: #0077cc;
+    color: white;
+    text-decoration: none;
+}
+
+/* Формы */
+label {
+    float: left;
+    clear: both;
+    color: #444;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+input, textarea {
+    clear: both;
+    float: left;
+    margin: 0 0 12px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 10px 14px;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0077cc;
+    box-shadow: 0 0 0 2px rgba(0, 119, 204, 0.2);
+}
+
+input[type="submit"] {
+    font-weight: 600;
+    background: #0077cc;
+    color: white;
+    padding: 12px 24px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+input[type="submit"]:hover {
+    background: #005fa3;
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Ошибки */
+.errorlist {
+    background: #ffebee;
+    color: #c62828;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin: 10px 0;
+    border-left: 4px solid #c62828;
+}
+
+/* Комментарии */
 .comment {
-    padding:10px;
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
 }
+
+.comment:last-child {
+    border-bottom: none;
+}
+
 .comment:nth-child(even) {
-    background:#efefef;
+    background-color: #f9f9fb;
 }
+
+.comment:hover {
+    background-color: #f0f7ff;
+}
+
 .comment .info {
-    font-weight:bold;
-    font-size:12px;
-    color:#666;
+    font-weight: 600;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment .info span.time {
+    font-style: italic;
+    font-size: 12px;
+    color: #999;
+}
+
+/* Улучшение для мобильных и отзывчивости (если нужно) */
+@media (max-width: 768px) {
+    #content, #sidebar {
+        width: 100%;
+        float: none;
+        padding: 20px;
+    }
+    #sidebar {
+        margin-top: 20px;
+    }
 }
